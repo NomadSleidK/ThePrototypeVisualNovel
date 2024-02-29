@@ -948,8 +948,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _choiceMenu: {fileID: 1538939312}
-  _dialogs: {fileID: 11400000, guid: 8fe74a5abb26c49b4a53b399a7669e89, type: 2}
-  _nextDialogs: {fileID: 11400000, guid: 2f68f844ad5c442e394bff9776e975dc, type: 2}
+  _dialog: {fileID: 11400000, guid: 8fe74a5abb26c49b4a53b399a7669e89, type: 2}
+  _nextDialog: {fileID: 11400000, guid: 2f68f844ad5c442e394bff9776e975dc, type: 2}
   _name: {fileID: 1274215977}
   _text: {fileID: 1963881533}
 --- !u!1 &1538939312
@@ -1006,7 +1006,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _choicePrefab: {fileID: 2202961300354263476, guid: faad65ad8a3644834a108d9427219f60, type: 3}
   _choiceZone: {fileID: 555077929}
-  testArray: []
 --- !u!114 &1538939315
 MonoBehaviour:
   m_ObjectHideFlags: 0

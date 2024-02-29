@@ -8,17 +8,17 @@ public class Controller : MonoBehaviour
 {
     [SerializeField] private GameObject _choiceMenu;
 
-    [SerializeField] private Dialogs _dialogs; //активный диалог
-    [SerializeField] private Dialogs _nextDialogs; //следующий диалог
-    public Dialogs Dialogs
+    [SerializeField] private Dialog _dialog; //активный диалог
+    [SerializeField] private Dialog _nextDialog; //следующий диалог
+    public Dialog Dialogs
     {
         get
         {
-            return _dialogs;
+            return _dialog;
         }
         set
         {
-            _dialogs = value;
+            _dialog = value;
             SetReader();
         }
     }
@@ -29,39 +29,39 @@ public class Controller : MonoBehaviour
     private TextMeshProUGUI Text => _text;
 
     private StraightReader _straightReader; //оператор линейного диалога
-    private BrachedReader _brachedReader; //оператор разветвлённого диалога
+    private BranchedReader _branchedReader; //оператор разветвлённого диалога
     private Reader _activeReader; //активный оператор
 
     Dictionary<Type, Reader> Readers; //словарь операторова
 
     public void Awake()
     {
-        _straightReader = new StraightReader(Name, Text);
-        _brachedReader = new BrachedReader(Name, Text, _choiceMenu);
+        _straightReader = new StraightReader(Name, Text, this);
+        _branchedReader = new BranchedReader(Name, Text, _choiceMenu, this);
 
         Readers = new Dictionary<Type, Reader> //создаём словарь операторов
         {
             {typeof(StraightDialog), _straightReader},
-            {typeof(BranchedDialog), _brachedReader}
+            {typeof(BranchedDialog), _branchedReader}
         };
 
-        Dialogs = _dialogs; //устанавливаем активный диалог
+        Dialogs = _dialog; //устанавливаем активный диалог
         _activeReader.NextLine(); //запускаем новую линию в диалоге
     }
 
-    private void SetReader() //устанока активного оператора для чтения диалога
+    private void SetReader()
     {
         _activeReader = Readers[Dialogs.GetType()];
         _activeReader.GetNewDialog(Dialogs);
     }
 
-    public void ReplaceDialog() //заменить диалог
+    public void ReplaceToNextDialog() //заменить диалог
     {
-        Dialogs = _nextDialogs;
+        Dialogs = _nextDialog;
         ReadLine();
     }
 
-    public void ReadLine() //сделуюзая линия диалога
+    public void ReadLine()
     {
         _activeReader.NextLine();
     }

@@ -8,22 +8,19 @@ public class ChoiceMenu : MonoBehaviour
 {
     [SerializeField] private GameObject _choicePrefab;
     [SerializeField] private GameObject _choiceZone;
-    private Choice _choice;
-    private GameObject[] _choices;
-
-    public string[] testArray;
+    private OptionBox _optionBox; //переменная скрипта кнопки выбора
+    private GameObject[] _choices; //массив ссылок на кнопоки
 
     public void CreateNewChoices(ChoiceOption[] ChoiceOptions)
     {
-        //_choices = new GameObject[ChoiceOptions.Length];
-        //Debug.Log(ChoiceOptions.TextOption);       <-------
+        _choices = new GameObject[ChoiceOptions.Length];
         foreach (ChoiceOption option in ChoiceOptions)
         {
             GameObject newOption = Instantiate(_choicePrefab);
             newOption.transform.SetParent(_choiceZone.transform);
-            _choice = newOption.GetComponent<Choice>();
-            _choice.ChoiceText.SetText(option.TextOption);
-            _choice.NextDialog = option.Dialogs;
+            _optionBox = newOption.GetComponent<OptionBox>();
+            _optionBox.OptionBoxText.SetText(option.TextOption);
+            _optionBox.NextDialog = option.NextDialog;
         }
     }
 

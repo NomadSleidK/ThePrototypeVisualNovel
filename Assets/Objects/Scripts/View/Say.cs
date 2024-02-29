@@ -6,12 +6,12 @@ namespace Data.View
 {
     public class Say: MonoBehaviour
     {
-        [SerializeField] private Dialogs _dialogs;
+        [SerializeField] private Dialog _dialogs;
 
         private StraightReader _straightReader;
-        private BrachedReader _brachedReader;
+        private BranchedReader _brachedReader;
 
-        public Dialogs Dialogs
+        public Dialog Dialogs
         {
             get
             {
@@ -36,7 +36,7 @@ namespace Data.View
             }
         }
 
-        [SerializeField] private Dialogs _newDialogs;
+        [SerializeField] private Dialog _newDialogs;
         [SerializeField] private TextMeshProUGUI _name;
         [SerializeField] private TextMeshProUGUI _text;
 

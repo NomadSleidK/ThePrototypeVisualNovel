@@ -2,11 +2,10 @@ using UnityEngine;
 
 namespace Game.Dialogs
 {
-
-    public class Dialogs: ScriptableObject
+    public class Dialog: ScriptableObject
     {
         [System.Serializable]
-        public class Dialog
+        public class Replica
         {
             [SerializeField] private string _name;
             [SerializeField] private string _text;
@@ -14,8 +13,8 @@ namespace Game.Dialogs
             public string Name => _name;
             public string Text => _text;
         }
-        [SerializeField] private Dialog[] _dialogs;
+        [SerializeField] private Replica[] _dialogs;
 
-        public Dialog[] Get => _dialogs;
+        public Replica[] Get => _dialogs;
     }
 }

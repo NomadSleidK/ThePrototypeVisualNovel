@@ -4,9 +4,9 @@ namespace Game.Dialogs
 {
     [CreateAssetMenu(menuName = "Dialogs/" + nameof(StraightDialog))]
 
-    public class StraightDialog: Dialogs
+    public class StraightDialog: Dialog
     {
-        [SerializeField] private StraightDialog _nextDialog;
-        public StraightDialog NextDialog => _nextDialog;
+        [SerializeField] private Dialog _dialog;
+        public Dialog NextDialog => _dialog;
     }
 }

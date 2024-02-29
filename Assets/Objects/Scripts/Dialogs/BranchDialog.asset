@@ -22,4 +22,10 @@ MonoBehaviour:
   - _name: "\u0421\u0430\u0439\u043C\u043E\u043D"
     _text: "\u041D\u0430\u0434\u0435\u044E\u0441\u044C \u0441\u0432\u0435\u0434\u0435\u043D\u0438\u044F
       \u0432\u0435\u0440\u043D\u044B"
-  _choiceOptions: []
+  _choiceOptions:
+  - _textOption: alfa 1
+    _dialog: {fileID: 0}
+  - _textOption: bravo 2
+    _dialog: {fileID: 0}
+  - _textOption: echo
+    _dialog: {fileID: 0}

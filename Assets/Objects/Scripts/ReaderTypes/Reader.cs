@@ -4,12 +4,14 @@ using System;
 [Serializable]
 public abstract class Reader
 {
-    protected Dialogs _dialogs;
+    protected Dialog _dialog;
     protected int _index;
+    protected Controller _readerController;
 
-    public void GetNewDialog(Dialogs dialogs)
+
+    public void GetNewDialog(Dialog dialog)
     {
-        _dialogs = dialogs;
+        _dialog = dialog;
         _index = 0;
     }
 
