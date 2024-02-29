@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Game.Data
+namespace Game.Dialogs
 {
-    [CreateAssetMenu(menuName = "Dialogs/" + nameof(Dialogs))]
+
     public class Dialogs: ScriptableObject
     {
         [System.Serializable]

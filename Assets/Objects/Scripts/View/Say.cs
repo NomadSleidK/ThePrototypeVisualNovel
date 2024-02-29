@@ -1,21 +1,64 @@
-using Game.Data;
 using UnityEngine;
+using Game.Dialogs;
 using TMPro;
 
 namespace Data.View
 {
     public class Say: MonoBehaviour
     {
-        [SerializeField] private Dialogs _dialogs; //поле для диалога
-        [SerializeField] private Dialogs _newDialogs; //поле для диалога
-        [SerializeField] private TextMeshProUGUI _name; //поле вывода имени
-        [SerializeField] private TextMeshProUGUI _text; //поле вывода текста
+        [SerializeField] private Dialogs _dialogs;
+
+        private StraightReader _straightReader;
+        private BrachedReader _brachedReader;
+
+        public Dialogs Dialogs
+        {
+            get
+            {
+                return _dialogs;
+            }
+            set
+            {
+                _dialogs = value;
+            }
+        }
+
+        [SerializeField] private Reader _reader;
+        public Reader Reader
+        {
+            get
+            {
+                return _reader;
+            }
+            set
+            {
+                _reader = value;
+            }
+        }
+
+        [SerializeField] private Dialogs _newDialogs;
+        [SerializeField] private TextMeshProUGUI _name;
+        [SerializeField] private TextMeshProUGUI _text;
 
         private int _index;
 
         private void Start ()
         {
             if(_dialogs != null) NextLine();
+
+            //_straightReader = new StraightReader();
+            //_brachedReader = new BrachedReader();
+            _reader = _straightReader;
+        }
+
+        public void Clickreader()
+        {
+            _reader.NextLine();
+        }
+
+        public void ReturnReader()
+        {
+            Dialogs = _newDialogs;
         }
 
         public void NextLine ()
