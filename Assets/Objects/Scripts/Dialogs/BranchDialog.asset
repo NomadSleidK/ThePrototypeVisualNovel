@@ -24,8 +24,8 @@ MonoBehaviour:
       \u0432\u0435\u0440\u043D\u044B"
   _choiceOptions:
   - _textOption: alfa 1
-    _dialog: {fileID: 0}
+    _dialog: {fileID: 11400000, guid: 2960702b8a818498da8c0001d98ce655, type: 2}
   - _textOption: bravo 2
-    _dialog: {fileID: 0}
-  - _textOption: echo
-    _dialog: {fileID: 0}
+    _dialog: {fileID: 11400000, guid: bfc2035d08ef248a89f149ee3f815bc0, type: 2}
+  - _textOption: echo 3
+    _dialog: {fileID: 11400000, guid: d22715f7c65b3416e8c7f8435a406ec9, type: 2}

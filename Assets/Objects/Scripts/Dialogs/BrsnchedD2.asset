@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ef93d8616f348a7830808028304827, type: 3}
+  m_Name: BrsnchedD2
+  m_EditorClassIdentifier: 
+  _dialogs:
+  - _name: RR
+    _text: "\u0438\u0434\u0451\u043C \u0434\u0430\u043B\u044C\u0448\u0435"
+  - _name: RR
+    _text: "\u0412\u0441\u0451 \u0432 \u043D\u043E\u0440\u043C\u0435"
+  - _name: RR
+    _text: "\u0422\u0430\u043A \u0434\u0435\u0440\u0436\u0430\u0442\u044C"
+  _choiceOptions:
+  - _textOption: "\u0418\u0434\u0442\u0438 \u0434\u0430\u043B\u044C\u0448\u0435"
+    _dialog: {fileID: 11400000, guid: 2960702b8a818498da8c0001d98ce655, type: 2}
+  - _textOption: "\u0411\u0435\u0436\u0430\u0442\u044C \u0434\u0430\u043B\u044C\u0448\u0435"
+    _dialog: {fileID: 11400000, guid: bfc2035d08ef248a89f149ee3f815bc0, type: 2}

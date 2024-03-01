@@ -8,17 +8,17 @@ public class Controller : MonoBehaviour
 {
     [SerializeField] private GameObject _choiceMenu;
 
-    [SerializeField] private Dialog _dialog; //активный диалог
+    [SerializeField] private Dialog _activeDialog; //активный диалог
     [SerializeField] private Dialog _nextDialog; //следующий диалог
-    public Dialog Dialogs
+    public Dialog ActiveDialog
     {
         get
         {
-            return _dialog;
+            return _activeDialog;
         }
         set
         {
-            _dialog = value;
+            _activeDialog = value;
             SetReader();
         }
     }
@@ -45,19 +45,19 @@ public class Controller : MonoBehaviour
             {typeof(BranchedDialog), _branchedReader}
         };
 
-        Dialogs = _dialog; //устанавливаем активный диалог
+        ActiveDialog = _activeDialog; //устанавливаем активный диалог
         _activeReader.NextLine(); //запускаем новую линию в диалоге
     }
 
     private void SetReader()
     {
-        _activeReader = Readers[Dialogs.GetType()];
-        _activeReader.GetNewDialog(Dialogs);
+        _activeReader = Readers[ActiveDialog.GetType()];
+        _activeReader.GetNewDialog(ActiveDialog);
     }
 
-    public void ReplaceToNextDialog() //заменить диалог
+    public void ReplaceToNextDialog(Dialog newDialog) //заменить диалог
     {
-        Dialogs = _nextDialog;
+        ActiveDialog = newDialog;
         ReadLine();
     }
 

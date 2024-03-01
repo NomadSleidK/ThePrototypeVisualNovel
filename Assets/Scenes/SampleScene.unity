@@ -847,7 +847,7 @@ GameObject:
   - component: {fileID: 1339529350}
   m_Layer: 5
   m_Name: Say
-  m_TagString: Untagged
+  m_TagString: Controller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -948,7 +948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _choiceMenu: {fileID: 1538939312}
-  _dialog: {fileID: 11400000, guid: 8fe74a5abb26c49b4a53b399a7669e89, type: 2}
+  _activeDialog: {fileID: 11400000, guid: 8fe74a5abb26c49b4a53b399a7669e89, type: 2}
   _nextDialog: {fileID: 11400000, guid: 2f68f844ad5c442e394bff9776e975dc, type: 2}
   _name: {fileID: 1274215977}
   _text: {fileID: 1963881533}
@@ -967,7 +967,7 @@ GameObject:
   - component: {fileID: 1538939314}
   m_Layer: 5
   m_Name: ChoiceMenu
-  m_TagString: Untagged
+  m_TagString: ChoiceMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e5331c687cfc4728a5c117fe35a530e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _choicePrefab: {fileID: 2202961300354263476, guid: faad65ad8a3644834a108d9427219f60, type: 3}
+  _choicePrefab: {fileID: 8768845156175835682, guid: faad65ad8a3644834a108d9427219f60, type: 3}
   _choiceZone: {fileID: 555077929}
 --- !u!114 &1538939315
 MonoBehaviour:
