@@ -4,6 +4,11 @@ namespace Game.Dialogs
 {
     public class Dialog: ScriptableObject
     {
+        
+        [SerializeField] private GameObject _backGround;
+        public GameObject BackGround => _backGround;
+        
+
         [System.Serializable]
         public class Replica
         {

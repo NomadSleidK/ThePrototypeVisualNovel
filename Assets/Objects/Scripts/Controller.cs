@@ -7,9 +7,9 @@ using UnityEngine;
 public class Controller : MonoBehaviour
 {
     [SerializeField] private GameObject _choiceMenu;
+    [SerializeField] private GameObject _backGroundParent;
 
     [SerializeField] private Dialog _activeDialog; //активный диалог
-    [SerializeField] private Dialog _nextDialog; //следующий диалог
     public Dialog ActiveDialog
     {
         get
@@ -32,7 +32,7 @@ public class Controller : MonoBehaviour
     private BranchedReader _branchedReader; //оператор разветвлённого диалога
     private Reader _activeReader; //активный оператор
 
-    Dictionary<Type, Reader> Readers; //словарь операторова
+    Dictionary<Type, Reader> Readers; //словарь операторов
 
     public void Awake()
     {
@@ -48,15 +48,24 @@ public class Controller : MonoBehaviour
         ActiveDialog = _activeDialog; //устанавливаем активный диалог
         _activeReader.NextLine(); //запускаем новую линию в диалоге
     }
+    
+    private void SetBackGround(GameObject backGround)
+    {
+        GameObject newOption = Instantiate(backGround, _backGroundParent.transform);
+        newOption.transform.localScale = backGround.transform.localScale;
+    }
 
     private void SetReader()
     {
         _activeReader = Readers[ActiveDialog.GetType()];
         _activeReader.GetNewDialog(ActiveDialog);
+        SetBackGround(ActiveDialog.BackGround);
     }
 
     public void ReplaceToNextDialog(Dialog newDialog) //заменить диалог
     {
+        if (newDialog == null)
+            return;
         ActiveDialog = newDialog;
         ReadLine();
     }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ef93d8616f348a7830808028304827, type: 3}
   m_Name: BranchDialog
   m_EditorClassIdentifier: 
+  _backGround: {fileID: 526241255325925990, guid: 38528119b16d6084fa4feb59cbf978ed, type: 3}
   _dialogs:
   - _name: "\u0421\u0430\u0439\u043C\u043E\u043D"
     _text: "\u0422\u044B \u0443\u0432\u0435\u0440\u0435\u043D\u0430 \u0447\u0442\u043E
