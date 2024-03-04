@@ -14,9 +14,14 @@ namespace Game.Dialogs
         {
             [SerializeField] private string _name;
             [SerializeField] private string _text;
+            [SerializeField] private Sprite _characterSprite;
+            [SerializeField] private bool _isLeftImageBox;
+
 
             public string Name => _name;
             public string Text => _text;
+            public Sprite CharacterSprite => _characterSprite;
+            public bool IsLEftImageBox => _isLeftImageBox;
         }
         [SerializeField] private Replica[] _dialogs;
 

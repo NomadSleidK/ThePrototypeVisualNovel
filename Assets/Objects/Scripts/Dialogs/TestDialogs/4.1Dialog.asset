@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8ef93d8616f348a7830808028304827, type: 3}
-  m_Name: BrsnchedD2
+  m_Name: 4.1Dialog
   m_EditorClassIdentifier: 
   _backGround: {fileID: 526241255325925990, guid: 38528119b16d6084fa4feb59cbf978ed, type: 3}
   _dialogs:
